@@ -1,0 +1,19 @@
+# Configuration file for MODIS pointscale snow cover timeseries download
+
+[name]
+task_name = 'Martha'
+
+[directories]
+# this is the home directory that will contain par/ and download/
+home_dir        = '/fs/yedoma/home/vpo001/MODIS_import/examples/MODIS_test_Martha'
+# this is the download destination directory
+dest_dir        = '/fs/yedoma/home/vpo001/MODIS_import/examples/MODIS_test_Martha/download'
+# directory where the .netrc credential file is stored
+credential_dir  = '/fs/yedoma/home/vpo001'
+# path to the csv configuration file 
+config_csv_path = '/fs/yedoma/home/vpo001/MODIS_import/examples/MODIS_test_Martha/par/MODIS_stations.csv'
+
+[config]
+# in the format YYYY/MM/DD to match with GlobSim
+startDate  = '2000/02/24'
+endDate    = '2000/03/18'
