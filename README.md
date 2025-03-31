@@ -30,7 +30,7 @@ Place *requirements.txt* in the directory where you plan to run the command. If 
 The package is better used directly on the command line with the built-in CLI
 
 ```bash
-MODIS_import -f /path_to_toml_config_file
+MODIS_import -f /<path>/<folder_name>/par/MODIS_config.toml
 ```
 
 It is recommended to stick to the folder structure adopted in the folder *MODIS_import/examples/MODIS_test_Martha*.

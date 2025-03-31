@@ -4,7 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "MODIS_import"
-dynamic = ["version"]
+# dynamic = ["version"]
+version = "0.0.1"
 authors = [
     {name = "Victor Pozsgay", email = "victor.pozsgay@carleton.ca"},
 ]
@@ -20,8 +21,8 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Atmospheric Science"
 ]
 
-[tool.setuptools.dynamic]
-version = {attr = "MODIS_import.__version__"}
+# [tool.setuptools.dynamic]
+# version = {attr = "MODIS_import.__version__"}
 
 [project.scripts]
 MODIS_import = "MODIS_import.__main__:main"
