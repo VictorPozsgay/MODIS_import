@@ -45,8 +45,9 @@ files. Create the following directory structure::
 
 The two files are:
 
-#. **MODIS_config.toml**: downloads and scales reanalysis data to produce meteorological time series at any point location::
+1. **MODIS_config.toml**: downloads and scales reanalysis data to produce meteorological time series at any point location:
 
+```
 [name]
 task_name = <task_name>
 
@@ -70,14 +71,16 @@ endDate    = '<YYYY/MM/DD>'
 max_wait   = 86400
 # time between two status checks (in seconds), suggested 30s
 time_sleep = 30
+```
 
-#. **MODIS_stations.csv**: Land surface model of the mass and energy balance of the hydrological cycle which simulates ground thermal properties::
+2. **MODIS_stations.csv**: Land surface model of the mass and energy balance of the hydrological cycle which simulates ground thermal properties:
 
+```
 id,latitude,longitude
 Site_name_1,lat_1,lon_1
 ...
 Site_name_n,lat_n,lon_n
-
+```
 
 Once the package is run, a new *download/* foilder is automatically created, and is populated with two csv files
 containing the snow cover and land surface temperature data, together with a text log file. Finally, when the
