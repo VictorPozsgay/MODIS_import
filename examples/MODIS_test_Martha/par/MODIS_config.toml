@@ -17,3 +17,9 @@ config_csv_path = '/fs/yedoma/home/vpo001/MODIS_import/examples/MODIS_test_Marth
 # in the format YYYY/MM/DD to match with GlobSim
 startDate  = '2000/02/24'
 endDate    = '2000/03/18'
+
+[download]
+# how long shall we wait (in seconds) between submitting a task and giving up, suggested 1day=86400s
+max_wait   = 86400
+# time between two status checks (in seconds), suggested 30s
+time_sleep = 30

@@ -4,7 +4,7 @@ netCDF4 file automatic."""
 import os
 import toml
 
-from MODIS_nc_creation import extract_info_config_csv, result_csvs_to_dict_product_ID, create_nc, add_dims_nc, add_var_Date, add_var_pointID, add_var_latitude, add_var_longitude, add_var_MODIS_Tile, add_var_NDSI_Snow_Cover, add_var_NDSI_Snow_Cover_original_with_code_for_missing_data, add_var_LST_Day, add_var_LST_Night, add_var_Clear_day_cov, add_var_Clear_night_cov
+from MODIS_import.MODIS_nc_creation import extract_info_config_csv, result_csvs_to_dict_product_ID, create_nc, add_dims_nc, add_var_Date, add_var_pointID, add_var_latitude, add_var_longitude, add_var_MODIS_Tile, add_var_NDSI_Snow_Cover, add_var_NDSI_Snow_Cover_original_with_code_for_missing_data, add_var_LST_Day, add_var_LST_Night, add_var_Clear_day_cov, add_var_Clear_night_cov
 
 ##################################################################################
 ##################################################################################

@@ -16,11 +16,11 @@ def get_credential_MODIS(credential_dir):
     Parameters
     ----------
     credential_dir: str
-                    A directory that holds the login and password
-                    information, in the form
-                    'machine urs.earthdata.nasa.gov login <login>
-                    password <password>'
-                    with a space between each field
+        A directory that holds the login and password
+        information, in the form
+        'machine urs.earthdata.nasa.gov login <login>
+        password <password>'
+        with a space between each field
 
     Returns
     -------
@@ -51,12 +51,12 @@ def create_log(dest_dir):
     Parameters
     ----------
     dest_dir: str
-              A directory that where the log file will be created.
+        A directory that where the log file will be created.
 
     Returns
     -------
     logfilepath: str
-                 path to the log file
+        path to the log file
     """
     datetime_now = datetime.now().strftime('%Y%m%d%H%M%S')
     logfile = f'MODIS_log_{datetime_now}.txt'
@@ -73,7 +73,7 @@ def write_product_metadata(logfilepath, product_id):
     Parameters
     ----------
     logfilepath: str
-                 path to the log file
+        path to the log file
     product_id: str
     """
 
@@ -100,7 +100,7 @@ def request_token(username, pwd, logfilepath):
     username: str
     pwd: str
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
@@ -152,18 +152,18 @@ def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath
     Parameters
     ----------
     config_csv_path: str
-                     path to the csv configuration file
+        path to the csv configuration file
     task_name:str
     startDate: str
-               format 'DD-MM-YYYY'
+        format 'DD-MM-YYYY'
     endDate: str
-             format 'DD-MM-YYYY'
+        format 'DD-MM-YYYY'
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
-    task: dic
+    task: dict
     """
 
     df_config = pd.read_csv(config_csv_path)
@@ -201,7 +201,7 @@ def submit_task(task, token, logfilepath):
     task: dict
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
@@ -250,7 +250,7 @@ def status_task(task_id, token, logfilepath):
     task_id: str
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
@@ -282,13 +282,13 @@ def check_if_status_done(task_id, token, logfilepath, max_wait, time_sleep):
     task_id: str
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
     max_wait: int
-              maximum amount of waiting time in second, default 86400s=1day
+        maximum amount of waiting time in second, default 86400s=1day
     time_sleep: int
-                time between two status checks in second, default 30s
+        time between two status checks in second, default 30s
     logfilepath: str
-                 path to the log file
+        path to the log file
     """
 
     start = time.time()
@@ -332,7 +332,7 @@ def download_bundle(task_id, token, list_product_id, logfilepath):
     token: str
     list_product_id: list
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
@@ -367,13 +367,13 @@ def write_csv_files_local(dest_dir, dic_files_results, task_id, task_name, token
     Parameters
     ----------
     dest_dir: str
-              A directory that where the log file will be created.
+        A directory that where the log file will be created.
     dic_files_results: dict
     task_id: str
     task_name: str
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
 
     Returns
     -------
@@ -434,7 +434,7 @@ def delete_task(task_id, token, logfilepath):
     task_id: str
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
     """
 
     response = requests.delete(
@@ -465,7 +465,7 @@ def log_out(token, logfilepath):
     ----------
     token: str
     logfilepath: str
-                 path to the log file
+        path to the log file
     """
 
     logout_response = requests.post(

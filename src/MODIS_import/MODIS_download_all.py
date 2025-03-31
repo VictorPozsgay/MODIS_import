@@ -4,23 +4,19 @@ from datetime import datetime
 import os
 import toml
 
-from MODIS_requests import get_credential_MODIS, create_log, write_product_metadata, request_token, create_task_json, submit_task, check_if_status_done, download_bundle, write_csv_files_local, delete_task, log_out
+from MODIS_import.MODIS_requests import get_credential_MODIS, create_log, write_product_metadata, request_token, create_task_json, submit_task, check_if_status_done, download_bundle, write_csv_files_local, delete_task, log_out
 
 
 ##################################################################################
 ##################################################################################
 
-def download_MODIS(config_toml_path, max_wait=86400, time_sleep=30):
+def download_MODIS(config_toml_path):
     """Downloads the MODIS results in csv form, saves them to a directory, and writes a text log.
 
     Parameters
     ----------
     config_toml_path: str
-                      path to the TOML configuration file
-    max_wait: int
-              maximum amount of waiting time in second, default 86400s=1day
-    time_sleep: int
-                time between two status checks in second, default 30s
+        path to the TOML configuration file
 
     Returns
     -------
@@ -36,6 +32,9 @@ def download_MODIS(config_toml_path, max_wait=86400, time_sleep=30):
     dest_dir = config['directories']['dest_dir']
     credential_dir = config['directories']['credential_dir']
     config_csv_path = config['directories']['config_csv_path']
+
+    max_wait = config['download']['max_wait']
+    time_sleep = config['download']['time_sleep']
 
     # Dates are stored in format '%Y/%m/%d' but we need '%m-%d-%Y' for download
     # silly Americans...
