@@ -20,6 +20,9 @@ classifiers = [
     "Topic :: Scientific/Engineering :: GIS",
     "Topic :: Scientific/Engineering :: Atmospheric Science"
 ]
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 # [tool.setuptools.dynamic]
 # version = {attr = "ModImpNet.__version__"}
@@ -30,5 +33,6 @@ ModImpNet = "ModImpNet.__main__:main"
 [project.urls]
 Homepage = "https://github.com/VictorPozsgay/ModImpNet"
 
+
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
