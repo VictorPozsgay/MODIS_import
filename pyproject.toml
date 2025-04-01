@@ -4,8 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ModImpNet"
-# dynamic = ["version"]
-version = "0.0.1"
+dynamic = ["version", "dependencies"]
 authors = [
     {name = "Victor Pozsgay", email = "victor.pozsgay@carleton.ca"},
 ]
@@ -20,12 +19,10 @@ classifiers = [
     "Topic :: Scientific/Engineering :: GIS",
     "Topic :: Scientific/Engineering :: Atmospheric Science"
 ]
-dynamic = ["dependencies"]
+
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
-
-# [tool.setuptools.dynamic]
-# version = {attr = "ModImpNet.__version__"}
+version = {attr = "ModImpNet.__version__"}
 
 [project.scripts]
 ModImpNet = "ModImpNet.__main__:main"
