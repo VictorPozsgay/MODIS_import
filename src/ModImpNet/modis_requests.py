@@ -389,7 +389,7 @@ def write_csv_files_local(dest_dir, dic_files_results, task_id, task_name, token
 
     for product_id,file_id in dic_files_results.items():
         # get a stream to the bundle file
-        filename = f'{task_name}_{product_id.replace('.','_')}_results.csv'
+        filename = f'{task_name}_{product_id.replace(".","_")}_results.csv'
         response = requests.get(
             f'https://appeears.earthdatacloud.nasa.gov/api/bundle/{task_id}/{file_id}',
             headers={'Authorization': f'Bearer {token}'},
