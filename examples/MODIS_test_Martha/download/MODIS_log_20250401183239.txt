@@ -1,0 +1,678 @@
+Log file for MODIS download
+ 
+################################################################################
+################################################################################
+
+ 
+Information about the MODIS product with product_id=MOD10A1.061: 
+ 
+{
+    "NDSI_Snow_Cover": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "NDSI_Snow_Cover",
+        "OrigDataType": "byte",
+        "OrigValidMax": 100,
+        "OrigValidMin": 0,
+        "QualityLayers": "['NDSI_Snow_Cover_Basic_QA','NDSI_Snow_Cover_Algorithm_Flags_QA']",
+        "QualityProductAndVersion": "MOD10A1.061",
+        "ScaleFactor": "",
+        "Units": "%",
+        "ValidMax": 100.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    },
+    "NDSI_Snow_Cover_Algorithm_Flags_QA": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": true,
+        "Layer": "NDSI_Snow_Cover_Algorithm_Flags_QA",
+        "OrigDataType": "byte",
+        "OrigValidMax": 254,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "unitless",
+        "ValidMax": 254.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    },
+    "NDSI_Snow_Cover_Basic_QA": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": true,
+        "Layer": "NDSI_Snow_Cover_Basic_QA",
+        "OrigDataType": "byte",
+        "OrigValidMax": 4,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "unitless",
+        "ValidMax": 4.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    },
+    "Snow_Albedo_Daily_Tile": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Snow_Albedo_Daily_Tile",
+        "OrigDataType": "byte",
+        "OrigValidMax": 100,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "unitless",
+        "ValidMax": 100.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    },
+    "granule_pnt": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "granule_pnt",
+        "OrigDataType": "byte",
+        "OrigValidMax": 254,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "unitless",
+        "ValidMax": 254.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    },
+    "orbit_pnt": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "int32",
+        "Description": "",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": -1,
+        "FillValueAll": [
+            -1
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "orbit_pnt",
+        "OrigDataType": "int32",
+        "OrigValidMax": 15,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "unitless",
+        "ValidMax": 15.0,
+        "ValidMin": 0.0,
+        "XSize": 2400,
+        "YSize": 2400
+    }
+}
+ 
+Log file for MODIS download
+ 
+################################################################################
+################################################################################
+
+ 
+Information about the MODIS product with product_id=MOD11A1.061: 
+ 
+{
+    "Clear_day_cov": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Day clear-sky coverage",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Clear_day_cov",
+        "OrigDataType": "uint16",
+        "OrigValidMax": 65535,
+        "OrigValidMin": 1,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 0.0005,
+        "Units": "",
+        "ValidMax": 32.76750183,
+        "ValidMin": 0.0005000000237,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Clear_night_cov": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Night clear-sky coverage",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Clear_night_cov",
+        "OrigDataType": "uint16",
+        "OrigValidMax": 65535,
+        "OrigValidMin": 1,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 0.0005,
+        "Units": "",
+        "ValidMax": 32.76750183,
+        "ValidMin": 0.0005000000237,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Day_view_angl": {
+        "AddOffset": -65.0,
+        "Available": true,
+        "DataType": "float32",
+        "Description": "View zenith angle of day observation",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Day_view_angl",
+        "OrigDataType": "byte",
+        "OrigValidMax": 130,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 1.0,
+        "Units": "Degree",
+        "ValidMax": 65.0,
+        "ValidMin": -65.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Day_view_time": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Local time of day observation",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Day_view_time",
+        "OrigDataType": "byte",
+        "OrigValidMax": 240,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 0.1,
+        "Units": "Hours",
+        "ValidMax": 24.0,
+        "ValidMin": 0.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Emis_31": {
+        "AddOffset": 0.49,
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Band 31 emissivity",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Emis_31",
+        "OrigDataType": "byte",
+        "OrigValidMax": 255,
+        "OrigValidMin": 1,
+        "QualityLayers": "['QC_Day']",
+        "QualityProductAndVersion": "MOD11A1.061",
+        "ScaleFactor": 0.002,
+        "Units": "",
+        "ValidMax": 1.0,
+        "ValidMin": 0.4920000136,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Emis_32": {
+        "AddOffset": 0.49,
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Band 32 emissivity",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Emis_32",
+        "OrigDataType": "byte",
+        "OrigValidMax": 255,
+        "OrigValidMin": 1,
+        "QualityLayers": "['QC_Day']",
+        "QualityProductAndVersion": "MOD11A1.061",
+        "ScaleFactor": 0.002,
+        "Units": "",
+        "ValidMax": 1.0,
+        "ValidMin": 0.4920000136,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "LST_Day_1km": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Day Land Surface Temperature",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "LST_Day_1km",
+        "OrigDataType": "uint16",
+        "OrigValidMax": 65535,
+        "OrigValidMin": 7500,
+        "QualityLayers": "['QC_Day']",
+        "QualityProductAndVersion": "MOD11A1.061",
+        "ScaleFactor": 0.02,
+        "Units": "Kelvin",
+        "ValidMax": 1310.699951,
+        "ValidMin": 150.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "LST_Night_1km": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Night Land Surface Temperature",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 0,
+        "FillValueAll": [
+            0
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "LST_Night_1km",
+        "OrigDataType": "uint16",
+        "OrigValidMax": 65535,
+        "OrigValidMin": 7500,
+        "QualityLayers": "['QC_Night']",
+        "QualityProductAndVersion": "MOD11A1.061",
+        "ScaleFactor": 0.02,
+        "Units": "Kelvin",
+        "ValidMax": 1310.699951,
+        "ValidMin": 150.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Night_view_angl": {
+        "AddOffset": -65.0,
+        "Available": true,
+        "DataType": "float32",
+        "Description": "View zenith angle of night observation",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Night_view_angl",
+        "OrigDataType": "byte",
+        "OrigValidMax": 130,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 1.0,
+        "Units": "Degree",
+        "ValidMax": 65.0,
+        "ValidMin": -65.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "Night_view_time": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "float32",
+        "Description": "Local time of night observation",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": 255,
+        "FillValueAll": [
+            255
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": false,
+        "Layer": "Night_view_time",
+        "OrigDataType": "byte",
+        "OrigValidMax": 240,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": 0.1,
+        "Units": "Hours",
+        "ValidMax": 24.0,
+        "ValidMin": 0.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "QC_Day": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "Daytime LST Quality Indicators",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": null,
+        "FillValueAll": [
+            null
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": true,
+        "Layer": "QC_Day",
+        "OrigDataType": "byte",
+        "OrigValidMax": 255,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "Bit Field",
+        "ValidMax": 255.0,
+        "ValidMin": 0.0,
+        "XSize": 1200,
+        "YSize": 1200
+    },
+    "QC_Night": {
+        "AddOffset": "",
+        "Available": true,
+        "DataType": "byte",
+        "Description": "Nighttime LST Quality indicators",
+        "Dimensions": [
+            "time",
+            "YDim",
+            "XDim"
+        ],
+        "FillValue": null,
+        "FillValueAll": [
+            null
+        ],
+        "Group": "",
+        "Info": {},
+        "IsQA": true,
+        "Layer": "QC_Night",
+        "OrigDataType": "byte",
+        "OrigValidMax": 255,
+        "OrigValidMin": 0,
+        "QualityLayers": "",
+        "QualityProductAndVersion": "",
+        "ScaleFactor": "",
+        "Units": "Bit Field",
+        "ValidMax": 255.0,
+        "ValidMin": 0.0,
+        "XSize": 1200,
+        "YSize": 1200
+    }
+}
+ 
+################################################################################
+################################################################################
+
+ 
+Full response to token request: 
+
+ 
+{"token_type": "Bearer", "token": "Hrj5HGyk5zRd2h87I9eR3MZWYeJBDf0szoxhXNjFs40eCWAB4vNpVbtoEZrY0kAccfioQH5r6Mc5hU0FgJrnxg", "expiration": "2025-04-03T18:32:44Z"}
+
+ 
+The token has been succesfully requested and retrieved. 
+The token is: Hrj5HGyk5zRd2h87I9eR3MZWYeJBDf0szoxhXNjFs40eCWAB4vNpVbtoEZrY0kAccfioQH5r6Mc5hU0FgJrnxg 
+
+ 
+################################################################################
+################################################################################
+
+ 
+Task dictionary created succesfully:
+ 
+{'task_type': 'point', 'task_name': 'Martha', 'params': {'dates': [{'startDate': '02-24-2000', 'endDate': '03-18-2000'}], 'layers': [{'product': 'MOD10A1.061', 'layer': 'NDSI_Snow_Cover'}, {'product': 'MOD11A1.061', 'layer': 'LST_Day_1km'}, {'product': 'MOD11A1.061', 'layer': 'LST_Night_1km'}, {'product': 'MOD11A1.061', 'layer': 'Clear_day_cov'}, {'product': 'MOD11A1.061', 'layer': 'Clear_night_cov'}], 'coordinates': [{'id': 'Martha_1400', 'latitude': 60.685361, 'longitude': -137.556814}, {'id': 'Martha_1600', 'latitude': 60.682103, 'longitude': -137.556094}]}}
+ 
+################################################################################
+################################################################################
+
+ 
+Task request submitted with task_id: e6bf8fbf-630c-4f0d-be9c-423f49202c7a
+ 
+Full task request response: 
+ {'task_id': 'e6bf8fbf-630c-4f0d-be9c-423f49202c7a', 'status': 'pending'}
+ 
+################################################################################
+################################################################################
+
+ 
+Task status: queued
+ 
+################################################################################
+################################################################################
+
+ 
+Not done yet 
+30.00s elapsed, next try in 30s.
+ 
+################################################################################
+################################################################################
+
+ 
+Task status: queued
+ 
+################################################################################
+################################################################################
+
+ 
+Not done yet 
+60.85s elapsed, next try in 30s.
+ 
+################################################################################
+################################################################################
+
+ 
+Task status: processing
+ 
+################################################################################
+################################################################################
+
+ 
+Not done yet 
+91.94s elapsed, next try in 30s.
+ 
+################################################################################
+################################################################################
+
+ 
+Task status: done
+ 
+################################################################################
+################################################################################
+
+ 
+Status: done 
+122.77s elapsed.
+ 
+Downloading can start
+ 
+################################################################################
+################################################################################
+
+ 
+Full bundle response: 
+ {'files': [{'sha256': 'a51e87a4987d19b6cecd7c44cd6e55c0a22932bf4ec9926e59ac3d92a8ec8980', 'file_id': '8691ce1b-f95d-4fef-b85a-2197940ef51d', 'file_name': 'Martha-MOD10A1-061-results.csv', 'file_size': 8693, 'file_type': 'csv', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-MOD10A1-061-results.csv'}, {'sha256': 'dbeeb2c4566ccf8682b85efde5a4eb03edc77e6e45959d014331b33e9ac9906b', 'file_id': '0bb72c3e-e73b-40db-aad7-c24ba59f1c1d', 'file_name': 'Martha-MOD11A1-061-results.csv', 'file_size': 21259, 'file_type': 'csv', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-MOD11A1-061-results.csv'}, {'sha256': 'd7c11ca38c3855e6c7711812cdb884033700b1eb220fa929dd396f6940e609a0', 'file_id': '421c76e4-ac93-4ca3-aac1-c1def43ec5fe', 'file_name': 'Martha-granule-list.txt', 'file_size': 10008, 'file_type': 'txt', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-granule-list.txt'}, {'sha256': '20894160bb335404d634d3ad51cc7df555b264fd514f52101cc5321cfa866e49', 'file_id': 'c86c63be-5665-4a51-bce5-5039af3ef45f', 'file_name': 'Martha-request.json', 'file_size': 1031, 'file_type': 'json', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-request.json'}, {'sha256': '64d21b45c2fe400214dec1d295a9bd119ed0a7f94bd1c6bc4724cc2b4883297e', 'file_id': 'e10e882a-215b-405d-9c08-f7f95911aa24', 'file_name': 'Martha-MOD10A1-061-metadata.xml', 'file_size': 17062, 'file_type': 'xml', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-MOD10A1-061-metadata.xml'}, {'sha256': 'eac8679296aed2016b9b93b24911b35ad4e1713b3b50666e5e15b481d57df8e0', 'file_id': 'ab5b0cc2-cba3-4269-a030-cf5f943a44da', 'file_name': 'Martha-MOD11A1-061-metadata.xml', 'file_size': 17124, 'file_type': 'xml', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/Martha-MOD11A1-061-metadata.xml'}, {'sha256': '6a5ce9af6ea32db1043745bbbb78b2f815114168363324070e15e9cdfb4d3545', 'file_id': '91e9d081-e4d1-4931-a0b3-ada82fafbc6d', 'file_name': 'README.md', 'file_size': 30647, 'file_type': 'txt', 's3_url': 's3://appeears-output/e6bf8fbf-630c-4f0d-be9c-423f49202c7a/README.md'}], 'created': '2025-04-01T18:33:58.933452', 'task_id': 'e6bf8fbf-630c-4f0d-be9c-423f49202c7a', 'updated': '2025-04-01T18:34:25.903497', 'bundle_type': 'point'}
+ 
+################################################################################
+################################################################################
+
+ 
+Created csv file at: /fs/yedoma/home/vpo001/ModImpNet/examples/MODIS_test_Martha/download/Martha_MOD10A1_061_results.csv
+ 
+################################################################################
+################################################################################
+
+ 
+Created csv file at: /fs/yedoma/home/vpo001/ModImpNet/examples/MODIS_test_Martha/download/Martha_MOD11A1_061_results.csv
+ 
+################################################################################
+################################################################################
+
+ 
+Task e6bf8fbf-630c-4f0d-be9c-423f49202c7a successfully deleted.
+ 
+################################################################################
+################################################################################
+
+ 
+Succesfully logged out.
+ 
