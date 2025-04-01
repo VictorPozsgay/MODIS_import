@@ -2,8 +2,8 @@
 netCDF4 file automatically."""
 
 
-from MODIS_import.MODIS_download_all import download_MODIS
-from MODIS_import.MODIS_full_nc_creation import full_nc_creation
+from ModImpNet.modis_download_all import download_modis
+from ModImpNet.modis_full_nc_creation import full_nc_creation
 
 ##################################################################################
 ##################################################################################
@@ -21,5 +21,5 @@ def download_conversion_nc(config_toml_path):
     netCDF4 file
     """
 
-    download_MODIS(config_toml_path)
+    download_modis(config_toml_path)
     full_nc_creation(config_toml_path)

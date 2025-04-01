@@ -10,7 +10,7 @@ import pandas as pd
 ##################################################################################
 
 
-def get_credential_MODIS(credential_dir):
+def get_credential_modis(credential_dir):
     """Returns login and password from credential file for MODIS.
 
     Parameters
@@ -79,14 +79,14 @@ def write_product_metadata(logfilepath, product_id):
 
     params = {'pretty': True}
     response = requests.get(
-        'https://appeears.earthdatacloud.nasa.gov/api/product/{0}'.format(product_id),
+        f'https://appeears.earthdatacloud.nasa.gov/api/product/{product_id}',
         params=params, timeout=86400)
     dataset_metadata = response.text
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
         f.write('Log file for MODIS download\n \n')
-        f.write('################################################################################## \n')
-        f.write('################################################################################## \n')
+        f.write('#' * 80, '\n')
+        f.write('#' * 80, '\n')
         f.write('\n \n')
         f.write(f'Information about the MODIS product with product_id={product_id}: \n \n')
         f.write(dataset_metadata)
@@ -107,12 +107,13 @@ def request_token(username, pwd, logfilepath):
     token: str
     """
 
-    response = requests.post('https://appeears.earthdatacloud.nasa.gov/api/login', auth=(username, pwd),
+    response = requests.post('https://appeears.earthdatacloud.nasa.gov/api/login',
+                             auth=(username, pwd),
                              timeout=86400)
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
-        f.write('################################################################################## \n')
-        f.write('################################################################################## \n')
+        f.write('#' * 80 + '\n')
+        f.write('#' * 80 + '\n')
         f.write('\n \n')
         f.write('Full response to token request: \n')
         f.write('\n \n')
@@ -126,27 +127,27 @@ def request_token(username, pwd, logfilepath):
             f.write('The token has been succesfully requested and retrieved. \n')
             f.write(f'The token is: {token} \n')
             f.write('\n \n')\
-        
+
         print('Token retrieved successfully.')
         return token
-    
+
     elif response.status_code == 504:
         with open(logfilepath,'a+', encoding="utf-8") as f:
             f.write('Timeout Error 504 (probably on the server\'s side) \n')
             f.write('\n \n')
-        
+
         print('Timeout Error 504 (probably on the server\'s side) when retrieving token.')
         return response.status_code
-        
-    else:    
+
+    else:
         with open(logfilepath,'a+', encoding="utf-8") as f:
             f.write(f'Some other error with status_code: {response.status_code} \n')
             f.write('\n \n')
-        
+
         print(f'Error {response.status_code} when retrieving token.')
         return response.status_code
 
-def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath):
+def create_task_json(config_csv_path, task_name, start_date, end_date, logfilepath):
     """Submits the task.
 
     Parameters
@@ -154,9 +155,9 @@ def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath
     config_csv_path: str
         path to the csv configuration file
     task_name:str
-    startDate: str
+    start_date: str
         format 'DD-MM-YYYY'
-    endDate: str
+    end_date: str
         format 'DD-MM-YYYY'
     logfilepath: str
         path to the log file
@@ -172,7 +173,7 @@ def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath
     task = {'task_type': 'point',
             'task_name': task_name,
             'params': {
-                'dates': [{'startDate': startDate, 'endDate': endDate}],
+                'dates': [{'startDate': start_date, 'endDate': end_date}],
                 'layers': [{'product': 'MOD10A1.061', 'layer': 'NDSI_Snow_Cover'},
                            {'product': 'MOD11A1.061', 'layer': 'LST_Day_1km'},
                            {'product': 'MOD11A1.061', 'layer': 'LST_Night_1km'},
@@ -183,8 +184,8 @@ def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath
     }
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
-        f.write('################################################################################## \n')
-        f.write('################################################################################## \n')
+        f.write('#' * 80 + '\n')
+        f.write('#' * 80 + '\n')
         f.write('\n \n')
         f.write('Task dictionary created succesfully:')
         f.write('\n \n')
@@ -192,7 +193,7 @@ def create_task_json(config_csv_path, task_name, startDate, endDate, logfilepath
         f.write('\n \n')
 
     return task
-     
+
 def submit_task(task, token, logfilepath):
     """Submits the task.
 
@@ -211,16 +212,16 @@ def submit_task(task, token, logfilepath):
     # submit the task request
     response = requests.post(
         'https://appeears.earthdatacloud.nasa.gov/api/task', 
-        json=task, 
-        headers={'Authorization': 'Bearer {0}'.format(token)}, timeout=86400)
+        json=task,
+        headers={'Authorization': f'Bearer {token}'}, timeout=86400)
 
     if response.status_code == 202:
         task_request_response = response.json()
         task_id = task_request_response['task_id']
 
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write(f'Task request submitted with task_id: {task_id}')
             f.write('\n \n')
@@ -228,12 +229,12 @@ def submit_task(task, token, logfilepath):
             f.write('\n \n')
 
         print(f'Task request submitted with task_id: {task_id}')
-    
+
     else:
         task_id = response.status_code
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write(f'FAILED task request submission with task_id: {task_id}')
             f.write('\n \n')
@@ -258,14 +259,14 @@ def status_task(task_id, token, logfilepath):
     """
 
     response = requests.get(
-        'https://appeears.earthdatacloud.nasa.gov/api/task/{0}'.format(task_id), 
-        headers={'Authorization': 'Bearer {0}'.format(token)}, timeout=86400
+        f'https://appeears.earthdatacloud.nasa.gov/api/task/{task_id}',
+        headers={'Authorization': f'Bearer {token}'}, timeout=86400
     )
     task_status_response = response.json()['status']
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
-        f.write('################################################################################## \n')
-        f.write('################################################################################## \n')
+        f.write('#' * 80 + '\n')
+        f.write('#' * 80 + '\n')
         f.write('\n \n')
         f.write(f'Task status: {task_status_response}')
         f.write('\n \n')
@@ -300,11 +301,11 @@ def check_if_status_done(task_id, token, logfilepath, max_wait, time_sleep):
 
         if task_status_response=='done':
             with open(logfilepath,'a+', encoding="utf-8") as f:
-                f.write('################################################################################## \n')
-                f.write('################################################################################## \n')
+                f.write('#' * 80 + '\n')
+                f.write('#' * 80 + '\n')
                 f.write('\n \n')
                 f.write('Status: done \n')
-                f.write(f'{"{:.2f}".format(dt)}s elapsed.')
+                f.write(f'{dt:.2f}s elapsed.')
                 f.write('\n \n')
                 f.write('Downloading can start')
                 f.write('\n \n')
@@ -314,14 +315,14 @@ def check_if_status_done(task_id, token, logfilepath, max_wait, time_sleep):
             break
         else:
             with open(logfilepath,'a+', encoding="utf-8") as f:
-                f.write('################################################################################## \n')
-                f.write('################################################################################## \n')
+                f.write('#' * 80 + '\n')
+                f.write('#' * 80 + '\n')
                 f.write('\n \n')
                 f.write('Not done yet \n')
-                f.write(f'{"{:.2f}".format(dt)}s elapsed, next try in {time_sleep}s.')
+                f.write(f'{dt:.2f}s elapsed, next try in {time_sleep}s.')
                 f.write('\n \n')
 
-            print(f'{"{:.2f}".format(dt)}s elapsed, next try in {time_sleep}s.')
+            print(f'{dt:.2f}s elapsed, next try in {time_sleep}s.')
 
 def download_bundle(task_id, token, list_product_id, logfilepath):
     """Downloads the bundle and returns the list of result files to download.
@@ -340,24 +341,27 @@ def download_bundle(task_id, token, list_product_id, logfilepath):
     """
 
     response = requests.get(
-        'https://appeears.earthdatacloud.nasa.gov/api/bundle/{0}'.format(task_id),  
-        headers={'Authorization': 'Bearer {0}'.format(token)}, timeout=86400
+        f'https://appeears.earthdatacloud.nasa.gov/api/bundle/{task_id}',
+        headers={'Authorization': f'Bearer {token}'}, timeout=86400
     )
     bundle_response = response.json()
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
-        f.write('################################################################################## \n')
-        f.write('################################################################################## \n')
+        f.write('#' * 80 + '\n')
+        f.write('#' * 80 + '\n')
         f.write('\n \n')
         f.write(f'Full bundle response: \n {bundle_response}')
         f.write('\n \n')
 
-    # retrieve list, each entry is a dictionary with 5 fields, including 'file_id', 'file_name', 'file_type'
+    # retrieve list, each entry is a dictionary with 5 fields,
+    # including 'file_id', 'file_name', 'file_type'
     list_files_results = [f for f in bundle_response['files'] if 'results' in f['file_name']]
     # get dict in the form
     # {'MOD10A1.061': '<file_id0>',
     #  'MOD11A1.061': '<file_id1>'}
-    dic_files_results = {i: [j['file_id'] for j in list_files_results if i.split('.')[0] in j['file_name']][0] for i in list_product_id}
+    dic_files_results = {i: [j['file_id']
+                             for j in list_files_results if i.split('.')[0] in j['file_name']][0]
+                         for i in list_product_id}
 
     return dic_files_results
 
@@ -386,12 +390,12 @@ def write_csv_files_local(dest_dir, dic_files_results, task_id, task_name, token
     for product_id,file_id in dic_files_results.items():
         # get a stream to the bundle file
         filename = f'{task_name}_{product_id.replace('.','_')}_results.csv'
-        response = requests.get( 
-            'https://appeears.earthdatacloud.nasa.gov/api/bundle/{0}/{1}'.format(task_id,file_id),  
-            headers={'Authorization': 'Bearer {0}'.format(token)}, 
+        response = requests.get(
+            f'https://appeears.earthdatacloud.nasa.gov/api/bundle/{task_id}/{file_id}',
+            headers={'Authorization': f'Bearer {token}'},
             allow_redirects=True,
             stream=True, timeout=86400
-        ) 
+        )
 
         if response.status_code == 200:
             # create a destination directory to store the file in
@@ -406,8 +410,8 @@ def write_csv_files_local(dest_dir, dic_files_results, task_id, task_name, token
                     f.write(data)
 
             with open(logfilepath,'a+', encoding="utf-8") as f:
-                f.write('################################################################################## \n')
-                f.write('################################################################################## \n')
+                f.write('#' * 80 + '\n')
+                f.write('#' * 80 + '\n')
                 f.write('\n \n')
                 f.write(f'Created csv file at: {filepath}')
                 f.write('\n \n')
@@ -416,8 +420,8 @@ def write_csv_files_local(dest_dir, dic_files_results, task_id, task_name, token
 
         else:
             with open(logfilepath,'a+', encoding="utf-8") as f:
-                f.write('################################################################################## \n')
-                f.write('################################################################################## \n')
+                f.write('#' * 80 + '\n')
+                f.write('#' * 80 + '\n')
                 f.write('\n \n')
                 f.write(f'Unexpected response with code {response.status_code}')
                 f.write('\n \n')
@@ -438,21 +442,21 @@ def delete_task(task_id, token, logfilepath):
     """
 
     response = requests.delete(
-        'https://appeears.earthdatacloud.nasa.gov/api/task/{0}'.format(task_id), 
-        headers={'Authorization': 'Bearer {0}'.format(token)}, timeout=86400)
+        f'https://appeears.earthdatacloud.nasa.gov/api/task/{task_id}',
+        headers={'Authorization': f'Bearer {token}'}, timeout=86400)
 
     if response.status_code == 204:
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write(f'Task {task_id} successfully deleted.')
             f.write('\n \n')
         print(f'Task {task_id} successfully deleted.')
     else:
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write(f'Something went wrong when deleting task {task_id}.')
             f.write('\n \n')
@@ -470,20 +474,20 @@ def log_out(token, logfilepath):
 
     logout_response = requests.post(
         'https://appeears.earthdatacloud.nasa.gov/api/logout', 
-        headers={'Authorization': 'Bearer {0}'.format(token)}, timeout=86400)
+        headers={'Authorization': f'Bearer {token}'}, timeout=86400)
 
     if logout_response.status_code == 204:
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write('Succesfully logged out.')
             f.write('\n \n')
         print('Succesfully logged out.')
     else:
         with open(logfilepath,'a+', encoding="utf-8") as f:
-            f.write('################################################################################## \n')
-            f.write('################################################################################## \n')
+            f.write('#' * 80 + '\n')
+            f.write('#' * 80 + '\n')
             f.write('\n \n')
             f.write('Token may have already expired.')
             f.write('\n \n')

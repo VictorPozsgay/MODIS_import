@@ -4,7 +4,7 @@ netCDF4 file automatic."""
 import os
 import toml
 
-from MODIS_import.MODIS_nc_creation import extract_info_config_csv, result_csvs_to_dict_product_ID, create_nc, add_dims_nc, add_var_Date, add_var_pointID, add_var_latitude, add_var_longitude, add_var_MODIS_Tile, add_var_NDSI_Snow_Cover, add_var_NDSI_Snow_Cover_original_with_code_for_missing_data, add_var_LST_Day, add_var_LST_Night, add_var_Clear_day_cov, add_var_Clear_night_cov
+from ModImpNet.modis_nc_creation import extract_info_config_csv, result_csvs_to_dict_product_id, create_nc, add_dims_nc, add_var_date, add_var_point_id, add_var_latitude, add_var_longitude, add_var_modis_tile, add_var_ndsi_snow_cover, add_var_ndsi_snow_cover_original_with_code_for_missing_data, add_var_lst_day, add_var_lst_night, add_var_clear_day_cov, add_var_clear_night_cov
 
 ##################################################################################
 ##################################################################################
@@ -33,9 +33,9 @@ def full_nc_creation(config_toml_path):
     nc_path = os.path.join(dest_dir, filename)
 
     list_paths_csv_results = []
-    list_product_ID = ['MOD10A1.061', 'MOD11A1.061']
+    list_product_id = ['MOD10A1.061', 'MOD11A1.061']
 
-    for product_id in list_product_ID:
+    for product_id in list_product_id:
         # get a stream to the bundle file
         filename = f'{task_name}_{product_id.replace('.','_')}_results.csv'
         filepath = os.path.join(dest_dir, filename)
@@ -46,18 +46,18 @@ def full_nc_creation(config_toml_path):
     except OSError:
         pass
 
-    list_ID, list_lat, list_lon = extract_info_config_csv(config_csv_path)
-    df_dict = result_csvs_to_dict_product_ID(list_paths_csv_results, list_ID)
+    list_id, list_lat, list_lon = extract_info_config_csv(config_csv_path)
+    df_dict = result_csvs_to_dict_product_id(list_paths_csv_results, list_id)
     create_nc(nc_path)
-    add_dims_nc(nc_path, list_ID)
-    add_var_Date(nc_path, df_dict)
-    add_var_pointID(nc_path, list_ID)
+    add_dims_nc(nc_path, list_id)
+    add_var_date(nc_path, df_dict)
+    add_var_point_id(nc_path, list_id)
     add_var_latitude(nc_path, list_lat)
     add_var_longitude(nc_path, list_lon)
-    add_var_MODIS_Tile(nc_path, df_dict)
-    add_var_NDSI_Snow_Cover(nc_path, df_dict)
-    add_var_NDSI_Snow_Cover_original_with_code_for_missing_data(nc_path, df_dict)
-    add_var_LST_Day(nc_path, df_dict)
-    add_var_LST_Night(nc_path, df_dict)
-    add_var_Clear_day_cov(nc_path, df_dict)
-    add_var_Clear_night_cov(nc_path, df_dict)
+    add_var_modis_tile(nc_path, df_dict)
+    add_var_ndsi_snow_cover(nc_path, df_dict)
+    add_var_ndsi_snow_cover_original_with_code_for_missing_data(nc_path, df_dict)
+    add_var_lst_day(nc_path, df_dict)
+    add_var_lst_night(nc_path, df_dict)
+    add_var_clear_day_cov(nc_path, df_dict)
+    add_var_clear_night_cov(nc_path, df_dict)

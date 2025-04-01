@@ -1,6 +1,6 @@
-# MODIS_import
+# ModImpNet
 
-**MODIS_import** is a package that allows for automatic import of Snow cover NDSI and Land Surface Temperature (LST)
+**ModImpNet** is a package that allows for automatic import of Snow cover NDSI and Land Surface Temperature (LST)
 from MODIS and produces a netCDF file from configuration files. The user only needs to provide a .toml and a .csv
 configuration files. Furthermore, credentials to AppEARS API (https://appeears.earthdatacloud.nasa.gov/api/) need
 to be specified in a .netrc file.
@@ -10,10 +10,10 @@ into a standardized netCDF format.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install **MODIS_import** (find the PyPi page here: https://pypi.org/project/MODIS_import/).
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install **ModImpNet** (find the PyPi page here: https://pypi.org/project/ModImpNet/).
 
 ```bash
-pip install MODIS_import
+pip install ModImpNet
 ```
 
 Install all the required packages (dependencies) from the *requirements.txt*  file.
@@ -30,10 +30,10 @@ Place *requirements.txt* in the directory where you plan to run the command. If 
 The package is better used directly on the command line with the built-in CLI
 
 ```bash
-MODIS_import -f /<path>/<folder_name>/par/MODIS_config.toml
+ModImpNet -f /<path>/<folder_name>/par/MODIS_config.toml
 ```
 
-It is recommended to stick to the folder structure adopted in the folder *MODIS_import/examples/MODIS_test_Martha*.
+It is recommended to stick to the folder structure adopted in the folder *ModImpNet/examples/MODIS_test_Martha*.
 Simply create a folder for each application, and within it, create a *par/* folder. This will hold two configuration
 files. Create the following directory structure::
 
@@ -99,7 +99,7 @@ We get the following directory structure::
 
 ## Examples
 
-The user can find some inspiration on how to use **MODIS_import** by looking at the examples provided.
+The user can find some inspiration on how to use **ModImpNet** by looking at the examples provided.
 
 ## License
 
