@@ -37,7 +37,7 @@ def full_nc_creation(config_toml_path):
 
     for product_id in list_product_id:
         # get a stream to the bundle file
-        filename = f'{task_name}_{product_id.replace('.','_')}_results.csv'
+        filename = f'{task_name}_{product_id.replace(".","_")}_results.csv'
         filepath = os.path.join(dest_dir, filename)
         list_paths_csv_results.append(filepath)
 
