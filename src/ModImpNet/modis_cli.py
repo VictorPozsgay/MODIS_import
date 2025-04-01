@@ -7,6 +7,7 @@ def main():
     # Create the parser
     parser = argparse.ArgumentParser()
     # Add an argument
+    # it will be stored as dest='f'
     parser.add_argument("-f", "--configfile",
                         default=None, type=str, required=True, dest='f',
                         help="Path to ModImpNet TOML configuration file.")
@@ -17,4 +18,4 @@ def main():
 
     else:
         args = parser.parse_args()
-        download_conversion_nc(args.configfile)
+        download_conversion_nc(args.f)
