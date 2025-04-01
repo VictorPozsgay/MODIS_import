@@ -63,6 +63,7 @@ config_csv_path = '<path>/<folder_name>/par/MODIS_stations.csv'
 
 [config]
 # in the format YYYY/MM/DD to match with GlobSim
+# Earliest date is '2000/02/24'
 startDate  = '<YYYY/MM/DD>'
 endDate    = '<YYYY/MM/DD>'
 
