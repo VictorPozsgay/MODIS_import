@@ -4,6 +4,6 @@
 MODIS_import.__main__: executed when MODIS_import directory is called as script.
 """
 
-from ModImpNetTest.modis_cli import main
+from ModImpNet.modis_cli import main
 
 main()

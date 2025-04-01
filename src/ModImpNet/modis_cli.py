@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from ModImpNetTest.modis_download_conversion import download_conversion_nc
+from ModImpNet.modis_download_conversion import download_conversion_nc
 
 def main():
     # Create the parser

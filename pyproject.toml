@@ -3,12 +3,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ModImpNetTest"
+name = "ModImpNet"
 dynamic = ["version", "dependencies"]
 authors = [
     {name = "Victor Pozsgay", email = "victor.pozsgay@carleton.ca"},
 ]
-description = "ModImpNetTest (MODIS Import to netCDF): Import Snow cover NDSI and Land Surface Temperature (LST) from MODIS and produces a netCDF file from configuration files"
+description = "ModImpNet (MODIS Import to netCDF): Import Snow cover NDSI and Land Surface Temperature (LST) from MODIS and produces a netCDF file from configuration files"
 readme = "README.md"
 requires-python = ">=3.7"
 license = {file = "LICENSE"}
@@ -22,13 +22,13 @@ classifiers = [
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
-version = {attr = "ModImpNetTest.__version__"}
+version = {attr = "ModImpNet.__version__"}
 
 [project.scripts]
-ModImpNetTest = "ModImpNetTest.__main__:main"
+ModImpNet = "ModImpNet.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/VictorPozsgay/ModImpNetTest"
+Homepage = "https://github.com/VictorPozsgay/ModImpNet"
 
 
 [tool.setuptools.packages.find]
