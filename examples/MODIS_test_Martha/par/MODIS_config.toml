@@ -15,6 +15,7 @@ config_csv_path = '/fs/yedoma/home/vpo001/MODIS_import/examples/MODIS_test_Marth
 
 [config]
 # in the format YYYY/MM/DD to match with GlobSim
+# Earliest date is '2000/02/24'
 startDate  = '2000/02/24'
 endDate    = '2000/03/18'
 

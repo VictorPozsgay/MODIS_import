@@ -85,8 +85,8 @@ def write_product_metadata(logfilepath, product_id):
 
     with open(logfilepath,'a+', encoding="utf-8") as f:
         f.write('Log file for MODIS download\n \n')
-        f.write('#' * 80, '\n')
-        f.write('#' * 80, '\n')
+        f.write('#' * 80 + '\n')
+        f.write('#' * 80 + '\n')
         f.write('\n \n')
         f.write(f'Information about the MODIS product with product_id={product_id}: \n \n')
         f.write(dataset_metadata)
