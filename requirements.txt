@@ -1,8 +1,4 @@
-argparse
-sys
-time
-os
-datetimenetCDF4
+netCDF4
 numpy
 pandas
 requests
